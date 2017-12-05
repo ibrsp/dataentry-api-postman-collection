@@ -1,8 +1,6 @@
 # dataentry-api-postman-collection
 A set of re-usable [Postman](https://www.getpostman.com/) scripts for working with the Dataentry API
 
-## Getting Started by importing from Link
-
 ## Getting Started by cloning Repository
 To get started with this collection and test that everything is working, after cloning this repository, follow these steps:
 
