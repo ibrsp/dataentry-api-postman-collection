@@ -2,8 +2,9 @@
 A set of re-usable [Postman](https://www.getpostman.com/) scripts for working with the Dataentry API
 
 ## Getting Started by cloning Repository
-To get started with this collection and test that everything is working, after cloning this repository, follow these steps:
+To get started with this collection and test that everything is working, follow these steps:
 
+1. Clone the repositoy, using one of theese commands: `git clone https://github.com/ibrsp/dataentry-api-postman-collection.git` (for https) or  `git clone git@github.com:ibrsp/dataentry-api-postman-collection.git` (for SSH)
 1. Open Postman
 1. Click Import
 1. Click Choose Files
