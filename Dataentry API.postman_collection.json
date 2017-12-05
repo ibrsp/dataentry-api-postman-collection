@@ -1,0 +1,1449 @@
+{
+	"info": {
+		"name": "Dataentry API",
+		"_postman_id": "82ca58cb-66a4-a71f-9834-74662f20c060",
+		"description": "Postman collection for Dataentry API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "List all Patients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"gender\": \"male\",\r\n  \"managingOrganizationId\": \"NIH/NIAID\",\r\n  \"identifier\": \"api-client-patient\",\r\n  \"condition\": {\r\n    \"caseDefinition\": \"new\",\r\n    \"ageOnset\": 46,\r\n    \"registrationDate\": \"2014-04-01T00:00:00.000Z\",\r\n    \"localization\": \"pulm\",\r\n    \"comorbidity\": [],\r\n    \"diagnosis\": \"A15\",\r\n    \"dstProfile\": \"MDRnonXDR\",\r\n    \"weigth\": 65,\r\n    \"height\": 177,\r\n    \"comments\": \"some comment\",\r\n    \"riskFactors\": [\r\n      \"alcoholism\",\r\n      \"tobacoUse\"\r\n    ],\r\n    \"education\": \"completeSchool\",\r\n    \"employment\": \"unemployed\",\r\n    \"totalContacts\": 1,\r\n    \"totalChildren\": 1\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient?_take=100&_skip=0",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient"
+							],
+							"query": [
+								{
+									"key": "_take",
+									"value": "100",
+									"equals": true
+								},
+								{
+									"key": "_skip",
+									"value": "0",
+									"equals": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"gender\": \"male\",\r\n  \"managingOrganizationId\": \"NIH/NIAID\",\r\n  \"identifier\": \"api-client-patient\",\r\n  \"condition\": {\r\n    \"caseDefinition\": \"new\",\r\n    \"ageOnset\": 46,\r\n    \"registrationDate\": \"2014-04-01T00:00:00.000Z\",\r\n    \"localization\": \"pulm\",\r\n    \"comorbidity\": [],\r\n    \"diagnosis\": \"A15\",\r\n    \"dstProfile\": \"MDRnonXDR\",\r\n    \"weigth\": 65,\r\n    \"height\": 177,\r\n    \"comments\": \"some comment\",\r\n    \"riskFactors\": [\r\n      \"alcoholism\",\r\n      \"tobacoUse\"\r\n    ],\r\n    \"education\": \"completeSchool\",\r\n    \"employment\": \"unemployed\",\r\n    \"totalContacts\": 1,\r\n    \"totalChildren\": 1\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the Patient by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"gender\": \"male\",\r\n  \"managingOrganizationId\": \"NIH/NIAID\",\r\n  \"identifier\": \"api-client-patient\",\r\n  \"condition\": {\r\n    \"caseDefinition\": \"new\",\r\n    \"ageOnset\": 46,\r\n    \"registrationDate\": \"2014-04-01T00:00:00.000Z\",\r\n    \"localization\": \"pulm\",\r\n    \"comorbidity\": [],\r\n    \"diagnosis\": \"A15\",\r\n    \"dstProfile\": \"MDRnonXDR\",\r\n    \"weigth\": 65,\r\n    \"height\": 177,\r\n    \"comments\": \"some comment\",\r\n    \"riskFactors\": [\r\n      \"alcoholism\",\r\n      \"tobacoUse\"\r\n    ],\r\n    \"education\": \"completeSchool\",\r\n    \"employment\": \"unemployed\",\r\n    \"totalContacts\": 1,\r\n    \"totalChildren\": 1\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace the Patient",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"gender\": \"male\",\r\n  \"managingOrganizationId\": \"NIH/NIAID\",\r\n  \"identifier\": \"api-client-patient_edited\",\r\n  \"condition\": {\r\n    \"caseDefinition\": \"new\",\r\n    \"ageOnset\": 46,\r\n    \"registrationDate\": \"2014-04-01T00:00:00.000Z\",\r\n    \"localization\": \"pulm\",\r\n    \"comorbidity\": [],\r\n    \"diagnosis\": \"A15\",\r\n    \"dstProfile\": \"MDRnonXDR\",\r\n    \"weigth\": 65,\r\n    \"height\": 177,\r\n    \"comments\": \"some comment\",\r\n    \"riskFactors\": [\r\n      \"alcoholism\",\r\n      \"tobacoUse\"\r\n    ],\r\n    \"education\": \"completeSchool\",\r\n    \"employment\": \"unemployed\",\r\n    \"totalContacts\": 1,\r\n    \"totalChildren\": 1\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Condition",
+			"item": [
+				{
+					"name": "Get the Condition by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"patientId\": \"0f081730-3f9d-4244-a88f-59af27a6808e\",\r\n  \"caseDefinition\": \"new\",\r\n  \"ageOnset\": 47,\r\n  \"registrationDate\": \"2014-04-01T00:00:00.000Z\",\r\n  \"localization\": \"pulm\",\r\n  \"comorbidity\": [],\r\n  \"diagnosis\": \"A15\",\r\n  \"dstProfile\": \"MDRnonXDR\",\r\n  \"weigth\": 65,\r\n  \"height\": 177,\r\n  \"comments\": null,\r\n  \"riskFactors\": [\r\n    \"alcoholism\",\r\n    \"tobacoUse\"\r\n  ],\r\n  \"education\": \"completeSchool\",\r\n  \"employment\": \"unemployed\",\r\n  \"totalContacts\": 1,\r\n  \"totalChildren\": null\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace the Condition by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\",\r\n  \"caseDefinition\": \"new\",\r\n  \"ageOnset\": 47,\r\n  \"registrationDate\": \"2014-04-01T00:00:00.000Z\",\r\n  \"localization\": \"pulm\",\r\n  \"comorbidity\": [],\r\n  \"diagnosis\": \"A15\",\r\n  \"dstProfile\": \"MDRnonXDR\",\r\n  \"weigth\": 65,\r\n  \"height\": 177,\r\n  \"comments\": null,\r\n  \"riskFactors\": [\r\n    \"alcoholism\",\r\n    \"tobacoUse\"\r\n  ],\r\n  \"education\": \"completeSchool\",\r\n  \"employment\": \"unemployed\",\r\n  \"totalContacts\": 1,\r\n  \"totalChildren\": null\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the Condition by ID (set state 'Retracted')",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Condition status",
+			"item": [
+				{
+					"name": "Set status for the Condition",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"final\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/status",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Specimen",
+			"item": [
+				{
+					"name": "List Specimens for the specified Condition",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"final\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/specimen",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"specimen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Specimen",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"containerIdentifier\": 1435,\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/specimen",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"specimen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the Specimen by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"containerIdentifier\": 1435,\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/specimen/:specimenId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"specimen",
+								":specimenId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace the Specimen by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"containerIdentifier\": 1435_edited,\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/specimen/:specimenId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"specimen",
+								":specimenId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the Specimen by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/specimen/:specimenId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"specimen",
+								":specimenId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Microscopy",
+			"item": [
+				{
+					"name": "List Microscopy for the specified Condition",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"final\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/microscopy",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"microscopy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Microscopy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"negative\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/microscopy",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"microscopy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the Microscopy by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"containerIdentifier\": 1435,\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/microscopy/:microscopyId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"microscopy",
+								":microscopyId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace the Microscopy by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"negative\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/microscopy/:microscopyId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"microscopy",
+								":microscopyId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the Microscopy by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/microscopy/:microscopyId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"microscopy",
+								":microscopyId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Culture",
+			"item": [
+				{
+					"name": "List Culture for the specified Condition",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"final\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/culture",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"culture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Culture",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"1+\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/culture",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"culture"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the Culture by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"containerIdentifier\": 1435,\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/culture/:cultureId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"culture",
+								":cultureId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace the Culture by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"2+\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/culture/:cultureId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"culture",
+								":cultureId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the Culture by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/culture/:cultureId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"culture",
+								":cultureId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DST",
+			"item": [
+				{
+					"name": "List DST for the specified Condition",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"final\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/dst",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"dst"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a DST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"dstTest\": \"DST\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"drugs\": [\r\n    {\r\n      \"component\": {\r\n        \"code\": \"H\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"R\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"S\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"E\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ofx\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cm\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Am\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Km\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Z\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pas\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pto\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cs\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Amx/Clv\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mb\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Dld\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Bdq\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ipm/Cln\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lzd\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cfz\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Clr\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ft\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"AG/CP\"\r\n      },\r\n      \"value\": null\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/dst",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"dst"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the DST by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"containerIdentifier\": 1435,\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/dst/:dstId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"dst",
+								":dstId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace the DST by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"dstTest\": \"DST\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"drugs\": [\r\n    {\r\n      \"component\": {\r\n        \"code\": \"H\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"R\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"S\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"E\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ofx\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cm\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Am\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Km\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Z\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pas\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pto\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cs\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Amx/Clv\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mb\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Dld\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Bdq\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ipm/Cln\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lzd\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cfz\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Clr\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ft\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"AG/CP\"\r\n      },\r\n      \"value\": null\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/dst/:dstId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"dst",
+								":dstId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the DST by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/dst/:dstId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"observation",
+								"dst",
+								":dstId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Treatment",
+			"item": [
+				{
+					"name": "Get the Treatment for the specified Condition",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"final\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Treatment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_uri>\" \r\n  \"conditionId\": \"<condition_id_from_uri>\" \t\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"outcome\": \"cured\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the Treatment by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"containerIdentifier\": 1435,\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment",
+								":treatmentId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace the Treatment by ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"outcome\": \"cured\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment",
+								":treatmentId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the Treatment by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment",
+								":treatmentId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Regimen",
+			"item": [
+				{
+					"name": "Create a Regimen",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tereatmentId\": \"<treatment_id_from_uri>\"\t\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"reason\": \"ended\",\r\n  \"drugs\": [\r\n    \"Cm\",\r\n    \"Cs\",\r\n    \"Lfx\",\r\n    \"Pas\",\r\n    \"Pto\",\r\n    \"Z\"\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId/regimen",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment",
+								":treatmentId",
+								"regimen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace the Regimen by date",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tereatmentId\": \"<treatment_id_from_uri>\"\t\r\n  \"date\": \"<regimen_start_date>\",\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"reason\": \"ended\",\r\n  \"drugs\": [\r\n    \"Cm\",\r\n    \"Cs\",\r\n    \"Lfx\",\r\n    \"Pas\",\r\n    \"Pto\",\r\n    \"Z\"\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId/regimen/:regimenDate_in_ISO-8601_format",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment",
+								":treatmentId",
+								"regimen",
+								":regimenDate_in_ISO-8601_format"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the regimen by date",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId/regimen/:regimenDate_in_ISO-8601_format",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment",
+								":treatmentId",
+								"regimen",
+								":regimenDate_in_ISO-8601_format"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lookup",
+			"item": [
+				{
+					"name": "List all Lookups",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/lookup",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"lookup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Lookup by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/lookup/:lookupId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"lookup",
+								":lookupId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organization",
+			"item": [
+				{
+					"name": "List all Organizations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/organization",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"organization"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
