@@ -36,7 +36,7 @@ To get started with this collection and test that everything is working, after c
 
 ## Getting the authorization token
 
-The instruction how to use `OAuth 2.0` authentication you cas see at the [Postman docs](https://www.getpostman.com/docs/postman/sending_api_requests/authorization) (section **OAuth 2.0**)
+The instruction how to use `OAuth 2.0` authentication you can see at the [Postman docs](https://www.getpostman.com/docs/postman/sending_api_requests/authorization) (section **OAuth 2.0**)
 
 ### Parameters to get the token
 
