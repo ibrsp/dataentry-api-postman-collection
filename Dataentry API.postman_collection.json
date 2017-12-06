@@ -160,6 +160,46 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete the Patient by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
 				}
 			]
 		},
