@@ -139,7 +139,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"gender\": \"male\",\r\n  \"managingOrganizationId\": \"NIH/NIAID\",\r\n  \"identifier\": \"api-client-patient_edited\",\r\n  \"condition\": {\r\n    \"caseDefinition\": \"new\",\r\n    \"ageOnset\": 46,\r\n    \"registrationDate\": \"2014-04-01T00:00:00.000Z\",\r\n    \"localization\": \"pulm\",\r\n    \"comorbidity\": [],\r\n    \"diagnosis\": \"A15\",\r\n    \"dstProfile\": \"MDRnonXDR\",\r\n    \"weigth\": 65,\r\n    \"height\": 177,\r\n    \"comments\": \"some comment\",\r\n    \"riskFactors\": [\r\n      \"alcoholism\",\r\n      \"tobacoUse\"\r\n    ],\r\n    \"education\": \"completeSchool\",\r\n    \"employment\": \"unemployed\",\r\n    \"totalContacts\": 1,\r\n    \"totalChildren\": 1\r\n  }\r\n}"
+							"raw": "{\r\n  \"id\": \"<patient_id_from_url>\"\t\r\n  \"gender\": \"male\",\r\n  \"managingOrganizationId\": \"NIH/NIAID\",\r\n  \"identifier\": \"api-client-patient_edited\",\r\n  \"condition\": {\r\n    \"caseDefinition\": \"new\",\r\n    \"ageOnset\": 46,\r\n    \"registrationDate\": \"2014-04-01T00:00:00.000Z\",\r\n    \"localization\": \"pulm\",\r\n    \"comorbidity\": [],\r\n    \"diagnosis\": \"A15\",\r\n    \"dstProfile\": \"MDRnonXDR\",\r\n    \"weigth\": 65,\r\n    \"height\": 177,\r\n    \"comments\": \"some comment\",\r\n    \"riskFactors\": [\r\n      \"alcoholism\",\r\n      \"tobacoUse\"\r\n    ],\r\n    \"education\": \"completeSchool\",\r\n    \"employment\": \"unemployed\",\r\n    \"totalContacts\": 1,\r\n    \"totalChildren\": 1\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId",
@@ -239,6 +239,16 @@
 								":patientId",
 								"condition",
 								":conditionId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -299,7 +309,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"status\": \"final\"\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\"\t\r\n  \"conditionId\": \"<condition_id_from_url>\"\t\r\n  \"status\": \"final\"\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/status",
@@ -313,6 +323,16 @@
 								"condition",
 								":conditionId",
 								"status"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -374,7 +394,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"containerIdentifier\": 1435,\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\"\t\r\n  \"conditionId\": \"<condition_id_from_url>\"\r\n  \"containerIdentifier\": 1435,\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/specimen",
@@ -388,6 +408,16 @@
 								"condition",
 								":conditionId",
 								"specimen"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -445,7 +475,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"containerIdentifier\": 1435_edited,\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\"\t\r\n  \"conditionId\": \"<condition_id_from_url>\"\r\n  \"id\": \"<specimen_id_from_url>\"\r\n  \"containerIdentifier\": \"1435_edited\",\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/specimen/:specimenId",
@@ -460,6 +490,20 @@
 								":conditionId",
 								"specimen",
 								":specimenId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "specimenId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -558,7 +602,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"negative\"\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\"\t\r\n  \"conditionId\": \"<condition_id_from_url>\"\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"negative\"\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/microscopy",
@@ -573,6 +617,16 @@
 								":conditionId",
 								"observation",
 								"microscopy"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -631,7 +685,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"negative\"\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\"\t\r\n  \"conditionId\": \"<condition_id_from_url>\"\r\n  \"id\": \"<microscopy_id_from_url>\"\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"negative\"\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/microscopy/:microscopyId",
@@ -647,6 +701,20 @@
 								"observation",
 								"microscopy",
 								":microscopyId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "microscopyId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -746,7 +814,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"1+\"\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\"\t\r\n  \"conditionId\": \"<condition_id_from_url>\"\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"1+\"\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/culture",
@@ -761,6 +829,16 @@
 								":conditionId",
 								"observation",
 								"culture"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -819,7 +897,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"2+\"\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\"\t\r\n  \"conditionId\": \"<condition_id_from_url>\"\r\n  \"id\": \"<culture_id_from_url>\"\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"value\": \"2+\"\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/culture/:cultureId",
@@ -835,6 +913,20 @@
 								"observation",
 								"culture",
 								":cultureId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "cultureId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -934,7 +1026,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"dstTest\": \"DST\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"drugs\": [\r\n    {\r\n      \"component\": {\r\n        \"code\": \"H\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"R\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"S\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"E\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ofx\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cm\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Am\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Km\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Z\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pas\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pto\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cs\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Amx/Clv\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mb\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Dld\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Bdq\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ipm/Cln\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lzd\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cfz\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Clr\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ft\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"AG/CP\"\r\n      },\r\n      \"value\": null\r\n    }\r\n  ]\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\"\t\r\n  \"conditionId\": \"<condition_id_from_url>\"\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"dstTest\": \"DST\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"drugs\": [\r\n    {\r\n      \"component\": {\r\n        \"code\": \"H\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"R\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"S\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"E\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ofx\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cm\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Am\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Km\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Z\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pas\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pto\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cs\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Amx/Clv\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mb\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Dld\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Bdq\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ipm/Cln\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lzd\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cfz\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Clr\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ft\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"AG/CP\"\r\n      },\r\n      \"value\": null\r\n    }\r\n  ]\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/dst",
@@ -949,6 +1041,16 @@
 								":conditionId",
 								"observation",
 								"dst"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -1007,7 +1109,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"dstTest\": \"DST\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"drugs\": [\r\n    {\r\n      \"component\": {\r\n        \"code\": \"H\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"R\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"S\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"E\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ofx\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cm\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Am\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Km\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Z\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pas\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pto\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cs\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Amx/Clv\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mb\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Dld\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Bdq\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ipm/Cln\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lzd\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cfz\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Clr\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ft\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"AG/CP\"\r\n      },\r\n      \"value\": null\r\n    }\r\n  ]\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\"\t\r\n  \"conditionId\": \"<condition_id_from_url>\"\r\n  \"id\": \"<dst_id_from_url>\"\r\n  \"specimenId\": \"<id_of_the_specimen>\",\r\n  \"dstTest\": \"DST\",\r\n  \"issued\": \"2004-01-29T00:00:00\",\r\n  \"drugs\": [\r\n    {\r\n      \"component\": {\r\n        \"code\": \"H\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"R\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"S\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"E\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ofx\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cm\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Am\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Km\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Z\"\r\n      },\r\n      \"value\": \"R\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mfx\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pas\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Pto\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cs\"\r\n      },\r\n      \"value\": \"S\"\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Amx/Clv\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Mb\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Dld\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Bdq\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ipm/Cln\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Lzd\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Cfz\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Clr\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"Ft\"\r\n      },\r\n      \"value\": null\r\n    },\r\n    {\r\n      \"component\": {\r\n        \"code\": \"AG/CP\"\r\n      },\r\n      \"value\": null\r\n    }\r\n  ]\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/observation/dst/:dstId",
@@ -1023,6 +1125,20 @@
 								"observation",
 								"dst",
 								":dstId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "dstId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -1135,6 +1251,16 @@
 								"condition",
 								":conditionId",
 								"treatment"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -1192,7 +1318,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"outcome\": \"cured\"\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\"\t\r\n  \"conditionId\": \"<condition_id_from_url>\"\r\n  \"id\": \"<treatment_id_from_url>\"\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"outcome\": \"cured\"\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId",
@@ -1207,6 +1333,20 @@
 								":conditionId",
 								"treatment",
 								":treatmentId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "treatmentId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -1269,7 +1409,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"tereatmentId\": \"<treatment_id_from_uri>\"\t\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"reason\": \"ended\",\r\n  \"drugs\": [\r\n    \"Cm\",\r\n    \"Cs\",\r\n    \"Lfx\",\r\n    \"Pas\",\r\n    \"Pto\",\r\n    \"Z\"\r\n  ]\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_uri>\" \r\n  \"conditionId\": \"<condition_id_from_uri>\" \t\r\n  \"tereatmentId\": \"<treatment_id_from_uri>\"\t\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"reason\": \"ended\",\r\n  \"drugs\": [\r\n    \"Cm\",\r\n    \"Cs\",\r\n    \"Lfx\",\r\n    \"Pas\",\r\n    \"Pto\",\r\n    \"Z\"\r\n  ]\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId/regimen",
@@ -1285,6 +1425,20 @@
 								"treatment",
 								":treatmentId",
 								"regimen"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "treatmentId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -1306,7 +1460,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"tereatmentId\": \"<treatment_id_from_uri>\"\t\r\n  \"date\": \"<regimen_start_date>\",\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"reason\": \"ended\",\r\n  \"drugs\": [\r\n    \"Cm\",\r\n    \"Cs\",\r\n    \"Lfx\",\r\n    \"Pas\",\r\n    \"Pto\",\r\n    \"Z\"\r\n  ]\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_uri>\" \r\n  \"conditionId\": \"<condition_id_from_uri>\" \t\r\n  \"tereatmentId\": \"<treatment_id_from_uri>\"\t\r\n  \"date\": \"<regimen_start_date>\",\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"reason\": \"ended\",\r\n  \"drugs\": [\r\n    \"Cm\",\r\n    \"Cs\",\r\n    \"Lfx\",\r\n    \"Pas\",\r\n    \"Pto\",\r\n    \"Z\"\r\n  ]\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId/regimen/:regimenDate_in_ISO-8601_format",
@@ -1323,6 +1477,24 @@
 								":treatmentId",
 								"regimen",
 								":regimenDate_in_ISO-8601_format"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "treatmentId",
+									"value": ""
+								},
+								{
+									"key": "regimenDate_in_ISO-8601_format",
+									"value": ""
+								}
 							]
 						}
 					},
