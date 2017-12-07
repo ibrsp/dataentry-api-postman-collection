@@ -349,7 +349,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\"\t\r\n  \"conditionId\": \"<condition_id_from_url>\"\t\r\n  \"status\": \"final\"\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_url>\",\r\n  \"conditionId\": \"<condition_id_from_url>\",\r\n  \"status\": \"final\"\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/status",
