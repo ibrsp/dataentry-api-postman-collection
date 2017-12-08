@@ -23,7 +23,7 @@ To get started with this collection and test that everything is working, follow 
     * _dataetnry_url_
       * Endpoint of Dataentry website
         * `https://data.tbportals.niaid.nih.gov` for PRODUCTION
-        * `http://tbportal-dataentry-dev.ibrsp.org` for DEVELPMENT 
+        * `http://tbportal-dataentry-dev.ibrsp.org` for Staging 
     * _authenticationToken_
       * The API Token of the client that you want to use to access the API. *See below to find out how to get the token*.
 1. Click Update
