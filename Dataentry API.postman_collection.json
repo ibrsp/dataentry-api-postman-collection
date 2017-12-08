@@ -1500,7 +1500,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"patientId\": \"<patient_id_from_uri>\",\r\n  \"conditionId\": \"<condition_id_from_uri>\",\r\n  \"tereatmentId\": \"<treatment_id_from_uri>\",\r\n  \"date\": \"<regimen_start_date>\",\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"reason\": \"ended\",\r\n  \"drugs\": [\r\n    \"Cm\",\r\n    \"Cs\",\r\n    \"Lfx\",\r\n    \"Pas\",\r\n    \"Pto\",\r\n    \"Z\"\r\n  ]\r\n}"
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_uri>\",\r\n  \"conditionId\": \"<condition_id_from_uri>\",\r\n  \"treatmentId\": \"<treatment_id_from_uri>\",\r\n  \"date\": \"<regimen_start_date>\",\r\n  \"start\": \"2014-04-01T00:00:00\",\r\n  \"end\": \"2015-09-11T00:00:00\",\r\n  \"reason\": \"ended\",\r\n  \"drugs\": [\r\n    \"Cm\",\r\n    \"Cs\",\r\n    \"Lfx\",\r\n    \"Pas\",\r\n    \"Pto\",\r\n    \"Z\"\r\n  ]\r\n}"
 						},
 						"url": {
 							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId/regimen/:regimenDate_in_ISO-8601_format",
