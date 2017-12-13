@@ -1656,6 +1656,75 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Security",
+			"description": "",
+			"item": [
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "refresh_token",
+									"value": "",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/identity/connect/token",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"identity",
+								"connect",
+								"token"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
