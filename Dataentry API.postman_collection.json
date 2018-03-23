@@ -1337,6 +1337,20 @@
 								":conditionId",
 								"treatment",
 								":treatmentId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "treatmentId",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -1577,6 +1591,297 @@
 						}
 					},
 					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stem cell therapy",
+			"item": [
+				{
+					"name": "List Stem cell therapy for the specified Condition",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"final\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId/stemcell",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment",
+								":treatmentId",
+								"stemcell"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "treatmentId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Stem cell therapy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"patientId\": \"<patient_id_from_uri>\",\r\n  \"conditionId\": \"<condition_id_from_uri>\",\r\n  \"treatmentId\": \"<treatment_id_from_uri>\",\r\n  \"collected\": \"2017-11-29T00:00:00\",\r\n  \"reInfusioned\": \"2017-12-29T00:00:00\",\r\n  \"dose\": \"4\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId/stemcell",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment",
+								":treatmentId",
+								"stemcell"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "treatmentId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get the Stem cell therapy by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"containerIdentifier\": 1435,\r\n  \"collected\": \"2004-01-29T00:00:00\",\r\n  \"bodySite\": \"other\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/stemcell/:stemCellId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"stemcell",
+								":stemCellId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "stemCellId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Replace the Stem cell therapy by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"<stem_сell_id_from_url>\",\r\n  \"patientId\": \"<patient_id_from_uri>\",\r\n  \"conditionId\": \"<condition_id_from_uri>\",\r\n  \"treatmentId\": \"<treatment_id_from_uri>\",\r\n  \"collected\": \"2017-11-29T00:00:00\",\r\n  \"reInfusioned\": \"2017-12-29T00:00:00\",\r\n  \"dose\": \"4\"\r\n}"
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId/stemcell/:stemCellId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment",
+								":treatmentId",
+								"stemcell",
+								":stemCellId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "treatmentId",
+									"value": ""
+								},
+								{
+									"key": "stemCellId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete the Stem cell therapy by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authenticationToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{dataetnry_url}}/api/patient/:patientId/condition/:conditionId/treatment/:treatmentId/regimen/:stemCellId",
+							"host": [
+								"{{dataetnry_url}}"
+							],
+							"path": [
+								"api",
+								"patient",
+								":patientId",
+								"condition",
+								":conditionId",
+								"treatment",
+								":treatmentId",
+								"regimen",
+								":stemCellId"
+							],
+							"variable": [
+								{
+									"key": "patientId",
+									"value": ""
+								},
+								{
+									"key": "conditionId",
+									"value": ""
+								},
+								{
+									"key": "treatmentId",
+									"value": ""
+								},
+								{
+									"key": "stemCellId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c471b10b-abbd-4250-97ec-5bc184690069",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "17bd57d0-c4f0-46a9-b334-c38d5f36c0e8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
